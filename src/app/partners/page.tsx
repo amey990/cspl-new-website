@@ -190,6 +190,10 @@ function LogoCell({ logo }: { logo: PartnerLogo }) {
         alt={logo.name}
         fill
         sizes="320px"
+        // Partner logos are bundled static assets. Bypass the image
+        // optimizer so every logo also loads reliably on mobile and on
+        // deployments where the optimizer route is unavailable.
+        unoptimized
         className="object-contain opacity-90 transition-opacity group-hover:opacity-100"
       />
     </div>
